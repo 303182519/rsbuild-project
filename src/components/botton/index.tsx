@@ -12,8 +12,6 @@ function MyButton({
     'bg-blue-700 text-gray-100': isHovering,
   });
 
-  const xx = 'xxx';
-
   return <div className={classes}>{children}</div>;
 }
 

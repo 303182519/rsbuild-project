@@ -26,5 +26,30 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "biomejs.biome"
-  }
+  },
+  // (可选) 告诉插件在哪些语言模式下激活
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "typescript": "typescript",
+    "javascriptreact": "javascript",
+    "typescriptreact": "typescript"
+  },
+  // (核心) 使用正则表达式告诉插件在哪里查找类名字符串
+  "tailwindCSS.experimental.classRegex": [
+    // 默认匹配 class/className
+    "class(?:Name)?\\s*=\\s*\"([^\"]*)\"",
+    "class(?:Name)?\\s*=\\s*'([^']*)'",
+    "class(?:Name)?\\s*=\\s*`([^`]*)`",
+    // 匹配 clsx(), classnames()
+    "(?:clsx|classnames)\\(([^)]*)\\)",
+    // 匹配 cva()
+    "cva\\(([^)]*)\\)",
+    // 匹配 twMerge()
+    "twMerge\\(([^)]*)\\)",
+    // 匹配 cn()
+    "cn\\(([^)]*)\\)",
+    // 示例: 匹配名为 myCustomProp 的 prop
+    "myCustomProp\\s*=\\s*\"([^\"]*)\""
+    // 根据需要添加更多规则
+  ]
 }
