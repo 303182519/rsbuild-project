@@ -32,9 +32,7 @@
       "suspicious": {
         "noUnknownAtRules": {
           "options": {
-            "ignore": [
-              "tailwind"
-            ]
+            "ignore": ["tailwind"]
           }
         }
       }

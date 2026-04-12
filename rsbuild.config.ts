@@ -5,9 +5,5 @@ import { pluginTailwindCSS } from 'rsbuild-plugin-tailwindcss';
 
 // Docs: https://rsbuild.rs/config/
 export default defineConfig({
-  plugins: [
-    pluginReact(),
-    pluginTailwindCSS(),
-    pluginSass()
-  ],
+  plugins: [pluginReact(), pluginTailwindCSS(), pluginSass()],
 });
