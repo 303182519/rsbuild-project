@@ -39,6 +39,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.14)
+      postcss-px-to-viewport:
+        specifier: ^1.1.1
+        version: 1.1.1
       prettier:
         specifier: ^3.8.2
         version: 3.8.2
@@ -621,6 +624,9 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
+
+  postcss-px-to-viewport@1.1.1:
+    resolution: {integrity: sha512-2x9oGnBms+e0cYtBJOZdlwrFg/mLR4P1g2IFu7jYKvnqnH/HLhoKyareW2Q/x4sg0BgklHlP1qeWo2oCyPm8FQ==}
 
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
@@ -1409,6 +1415,11 @@ snapshots:
     dependencies:
       postcss: 8.5.9
       postcss-selector-parser: 6.1.2
+
+  postcss-px-to-viewport@1.1.1:
+    dependencies:
+      object-assign: 4.1.1
+      postcss: 8.5.9
 
   postcss-selector-parser@6.1.2:
     dependencies:

@@ -1,10 +1,12 @@
 import './App.scss';
-import MyButton from './components/botton';
 
 const App = () => {
   return (
     <div className="content">
-      <h1 className="flex">Rsbuild with React</h1>
+      <div className="w-[100px] h-10 bg-slate-50 text-[12px] text-black mr-1">
+        xxx
+      </div>
+      {/* <h1 className="flex">Rsbuild with React</h1>
       <h2 className="text-3xl font-bold underline">Hello world!</h2>
       <div className="w-screen space-y-[20px]">
         <div>1</div>
@@ -28,7 +30,7 @@ const App = () => {
       </div>
       <div className="w-[100px] h-[40px] text-ellipsis">
         不仅考虑平衡，还要考虑字符间距实现美观,比如避免末尾出现孤立的单个字符，更适合对排版要求比较高的场景比如新闻网站
-      </div>
+      </div> */}
     </div>
   );
 };

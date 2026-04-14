@@ -2,7 +2,7 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true
+    "source.organizeImports": "explicit"
   },
   "css.lint.unknownAtRules": "ignore",
   "biome.enabled": true,
@@ -36,21 +36,19 @@
   },
   // (核心) 使用正则表达式告诉插件在哪里查找类名字符串
   "tailwindCSS.experimental.classRegex": [
-    // 默认匹配 class/className
-    "class(?:Name)?\\s*=\\s*\"([^\"]*)\"",
-    "class(?:Name)?\\s*=\\s*'([^']*)'",
-    "class(?:Name)?\\s*=\\s*`([^`]*)`",
-    // 匹配 clsx(), classnames()
-    "(?:clsx|classnames)\\(([^)]*)\\)",
-    // 匹配 cva()
-    "cva\\(([^)]*)\\)",
-    // 匹配 twMerge()
-    "twMerge\\(([^)]*)\\)",
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["classnames\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["classNames\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+    "(?:enter|leave)(?:From|To)?=\\s*(?:\"|')([^(?:\"|')]*)",
+    "(?:enter|leave)(?:From|To)?=\\s*(?:\"|'|{`)([^(?:\"|'|`})]*)",
+    ":\\s*?[\"'`]([^\"'`]*).*?,",
+    ["(?:twMerge|twJoin)\\(([^;]*)[\\);]", "[`'\"`]([^'\"`;]*)[`'\"`]"],
+    "tailwind\\('([^)]*)\\')", "(?:'|\"|`)([^\"'`]*)(?:'|\"|`)",
+    "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]",
     // 匹配 cn()
     "cn\\(([^)]*)\\)",
     // 示例: 匹配名为 myCustomProp 的 prop
-    "myCustomProp\\s*=\\s*\"([^\"]*)\"",
-    // 根据需要添加更多规则
-    "(?:const|let|var)\\s+[\\w$_][_\\w\\d]*\\s*=\\s*['\\\"](.*?)['\\\"]"
+    // "myCustomProp\\s*=\\s*\"([^\"]*)\"",
   ]
 }

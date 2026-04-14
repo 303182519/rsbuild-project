@@ -48,3 +48,8 @@ To learn more about Rsbuild, check out the following resources:
 1. 选中需要排序的代码
 2. 右键选择 "Format Selection"
 3. 选择 "Prettier" 作为格式化器
+
+## 移动端端方案适配
+方案的原理就是将 tailwindcss的这种h-10 宽度，也就是spacing，进行适配
+
+https://github.com/worldzhao/tailwindcss-mobile-adaptation/tree/main/apps
